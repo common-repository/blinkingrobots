@@ -1,0 +1,180 @@
+@each $className, $val in $colors {
+  .color-#{$className} {
+    color: $val !important;
+
+    li {
+      &:before {
+        color: inherit !important;
+      }
+    }
+  }
+  .bg-#{$className} {
+    background-color: $val !important;
+  }
+}
+
+@each $property, $className in $space-classes {
+  @each $spaceName, $spaceValue in $spaces {
+    .#{$className}-#{$spaceName} {
+      #{$property}: $spaceValue !important;
+    }
+  }
+  @each $breakpointName, $breakpointValue in $breakpoints {
+    @each $spaceName, $spaceValue in $spaces {
+      .#{$className}-#{$breakpointName}-#{$spaceName} {
+        @include rmin($breakpointValue) {
+          #{$property}: $spaceValue !important;
+        }
+      }
+    }
+  }
+
+  @each $breakpointName, $breakpointValue in $breakpoints-reversed {
+    @each $spaceName, $spaceValue in $spaces {
+      .#{$className}-#{$breakpointName}-max-#{$spaceName} {
+        @include r($breakpointValue - 1) {
+          #{$property}: $spaceValue !important;
+        }
+      }
+    }
+  }
+}
+
+
+$additional_classes: (
+        'display': (
+                'propShortName': 'd',
+                'values': (
+                        'none': none,
+                        'block': block,
+                        'inline-block': inline-block,
+                        'flex': flex,
+                        'initial': initial,
+                        'inline': inline,
+                )
+        ),
+        'justify-content': (
+                'propShortName': 'jc',
+                'values': (
+                        'flex-start': flex-start,
+                        'center': center,
+                        'flex-end': flex-end,
+                        'space-between': space-between,
+                )
+        ),
+        'align-items': (
+                'propShortName': 'ai',
+                'values': (
+                        'flex-start': flex-start,
+                        'center': center,
+                        'flex-end': flex-end,
+                        'space-between': space-between,
+                )
+        ),
+        'flex-direction': (
+                'propShortName': 'fd',
+                'values': (
+                        'row': row,
+                        'row-reverse': row-reverse,
+                        'column': column,
+                        'column-reverse': column-reverse,
+                )
+        ),
+        'width': (
+                'propShortName': 'w',
+                'values': (
+                        '100': 100%,
+                )
+        ),
+        'text-align': (
+                'propShortName': 'ta',
+                'values': (
+                        'left': left,
+                        'center': center,
+                        'right': right,
+                )
+        ),
+        'font-weight': (
+                'propShortName': 'fw',
+                'values': (
+                        '100': 100,
+                        '200': 200,
+                        '300': 300,
+                        '400': 400,
+                        '500': 500,
+                        '600': 600,
+                        '700': 700,
+                        '800': 800,
+                        '900': 900,
+                )
+        ),
+        'order': (
+                'propShortName': 'order',
+                'values': (
+                        '-1': -1,
+                        '0': 0,
+                        '1': 1,
+                        '2': 2,
+                        '3': 3,
+                        '4': 4,
+                        '5': 5,
+                        '6': 6,
+                        '7': 7,
+                        '8': 8,
+                        '9': 9,
+                )
+        ),
+        'overflow': (
+                'propShortName': 'overflow',
+                'values': (
+                        'hidden': hidden,
+                )
+        ),
+        'overflow-x': (
+                'propShortName': 'overflow-x',
+                'values': (
+                        'hidden': hidden,
+                        'auto': auto,
+                )
+        ),
+        'overflow-y': (
+                'propShortName': 'overflow-y',
+                'values': (
+                        'hidden': hidden,
+                        'auto': auto,
+                )
+        ),
+        'flex-grow': (
+                'propShortName': 'flex-grow',
+                'values': (
+                        '1': 1,
+                )
+        ),
+);
+
+@each $property, $data in $additional_classes {
+  @each $valShortName, $val in map-get($data, 'values') {
+    .#{map-get($data, 'propShortName')}-#{$valShortName} {
+      #{$property}: $val !important;
+    }
+  }
+  @each $breakpointName, $breakpointValue in $breakpoints {
+    @each $valShortName, $val in map-get($data, 'values') {
+      .#{map-get($data, 'propShortName')}-#{$breakpointName}-#{$valShortName} {
+        @include rmin($breakpointValue) {
+          #{$property}: $val !important;
+        }
+      }
+    }
+  }
+  @each $breakpointName, $breakpointValue in $breakpoints-reversed {
+    @each $valShortName, $val in map-get($data, 'values') {
+      .#{map-get($data, 'propShortName')}-#{$breakpointName}-max-#{$valShortName} {
+        @include r($breakpointValue - 1) {
+          #{$property}: $val !important;
+        }
+      }
+    }
+  }
+}
+

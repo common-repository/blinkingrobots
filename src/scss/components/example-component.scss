@@ -1,0 +1,9 @@
+@import "../helpers/variables";
+@import "../helpers/mixins";
+
+.example-component {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background-color: $black;
+}

@@ -1,0 +1,33 @@
+.guide-progress-notice {
+  .title {
+    font-size: 24px;
+    font-weight: 400;
+    text-decoration: underline;
+  }
+
+  .description {
+    font-size: 16px;
+    font-weight: 300;
+  }
+
+  li.completed {
+    text-decoration: line-through;
+  }
+
+  .finished {
+    font-size: 18px;
+    font-weight: 400;
+  }
+
+  input[type=checkbox] {
+    pointer-events: none;
+
+    &:disabled {
+      border-color: #8c8f94;
+
+      &, &:before {
+        opacity: 1;
+      }
+    }
+  }
+}

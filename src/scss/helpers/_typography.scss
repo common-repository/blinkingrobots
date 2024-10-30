@@ -1,0 +1,56 @@
+html {
+  font-size: 16px;
+}
+
+//h1, .h1 {
+//  @include h1;
+//}
+//
+//
+//h2, .h2 {
+//  @include h2;
+//
+//  &:not(:first-child) {
+//    margin-top: 1.5rem;
+//  }
+//
+//  &:not(:last-child) {
+//    margin-bottom: 1rem;
+//  }
+//}
+//
+//
+//h3, .h3 {
+//  @include h3;
+//
+//  &:not(:first-child) {
+//    margin-top: .5rem;
+//  }
+//
+//  &:not(:last-child) {
+//    margin-bottom: .25rem;
+//  }
+//}
+//
+//
+//h4, .h4 {
+//  @include h4;
+//}
+//
+//
+//h5, .h5 {
+//  @include h5;
+//}
+//
+//
+//h6, .h6 {
+//  @include h6;
+//}
+//
+//p {
+//  margin-bottom: 0;
+//
+//  &:not(:last-child) {
+//    margin-bottom: .25rem;
+//  }
+//}

@@ -1,0 +1,73 @@
+button, input[type="button"], input[type="submit"], .elementor-button {
+  -webkit-appearance: none;
+}
+
+.elementor-widget-button, .gform_button {
+  .elementor-button {
+
+    &, &.elementor-size-md {
+      // default styles (font-size, border, padding, ...)
+    }
+
+    &:hover, &:focus {
+
+    }
+
+    [class^="icon-"], [class*=" icon-"] {
+      line-height: inherit;
+    }
+
+    &.w-100 {
+      width: 100%;
+    }
+
+    //&.elementor-size-size-name {
+    //  &-sm {
+    //    padding: 1.0625rem .969rem;
+    //  }
+    //}
+
+    &[disabled] {
+      opacity: .5;
+      pointer-events: none;
+    }
+  }
+
+  //&.elementor-button_some_type {
+  //  .elementor-button {
+  //    color: $primary;
+  //    background-color: $white;
+  //    border-color: $white;
+  //
+  //    &:hover, &:focus {
+  //      color: $white;
+  //      background-color: $primary;
+  //      border-color: $primary;
+  //    }
+  //  }
+  //}
+
+  .elementor-button-text {
+    flex-grow: 0;
+    transition: opacity .3s ease;
+  }
+}
+
+.elementor-button {
+  &.is-loading {
+    pointer-events: none;
+    animation: 1s ease 0s infinite alternate blink;
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
+  }
+}

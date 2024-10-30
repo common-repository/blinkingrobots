@@ -1,0 +1,13 @@
+{
+  "name": "blinkingrobots",
+  "version": "1.0.0",
+  "description": "",
+  "autoload": {
+    "classmap": [
+      "includes"
+    ]
+  },
+  "require-dev": {
+    "10up/wp_mock": "0.4.2"
+  }
+}

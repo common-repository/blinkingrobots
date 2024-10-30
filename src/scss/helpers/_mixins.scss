@@ -1,0 +1,220 @@
+// width
+@mixin r($width) {
+  @media only screen and (max-width: $width+ "px") {
+    @content
+  }
+}
+
+@mixin rmin($width) {
+  @media only screen and (min-width: $width+ "px") {
+    @content
+  }
+}
+
+// height
+@mixin rh($height) {
+  @media only screen and (max-height: $height + "px") {
+    @content
+  }
+}
+
+@mixin rhmin($height) {
+  @media only screen and (min-height: $height + "px") {
+    @content
+  }
+}
+
+@mixin xs {
+  @include rmin($xs) {
+    @content
+  }
+}
+
+@mixin sm {
+  @include rmin($sm) {
+    @content
+  }
+}
+
+@mixin md {
+  @include rmin($md) {
+    @content
+  }
+}
+
+@mixin lg {
+  @include rmin($lg) {
+    @content
+  }
+}
+
+@mixin xl {
+  @include rmin($xl) {
+    @content
+  }
+}
+
+@mixin xxl {
+  @include rmin($xxl) {
+    @content
+  }
+}
+
+@mixin sm-max {
+  @include r($sm - 1) {
+    @content
+  }
+}
+
+@mixin xs-max {
+  @include r($xs - 1) {
+    @content
+  }
+}
+
+@mixin md-max {
+  @include r($md - 1) {
+    @content
+  }
+}
+
+@mixin lg-max {
+  @include r($lg - 1) {
+    @content
+  }
+}
+
+@mixin xl-max {
+  @include r($xl - 1) {
+    @content
+  }
+}
+
+@mixin xxl-max {
+  @include r($xxl - 1) {
+    @content
+  }
+}
+
+@mixin placeholder-color($color) {
+  &::placeholder {
+    transition: color .3s ease;
+    color: $color !important;
+    opacity: 1;
+  }
+  &::-webkit-input-placeholder {
+    transition: color .3s ease;
+    color: $color !important;
+    opacity: 1;
+  }
+  &::-moz-placeholder {
+    transition: color .3s ease;
+    color: $color !important;
+    opacity: 1;
+  }
+  &:-moz-placeholder {
+    transition: color .3s ease;
+    color: $color !important;
+    opacity: 1;
+  }
+  &:-ms-input-placeholder {
+    transition: color .3s ease;
+    color: $color !important;
+    opacity: 1;
+  }
+}
+
+@mixin admin-bar {
+  .admin-bar & {
+    @content
+  }
+}
+
+@mixin is-scrolled {
+  .is-scrolled & {
+    @content
+  }
+}
+
+@mixin not-scrolled {
+  html:not(.is-scrolled) & {
+    @content
+  }
+}
+
+// font-family
+@mixin font($alias, $name) {
+  @font-face {
+    font-family: $alias;
+    src: url("../fonts/" + $name + ".woff") format("woff"), url("../fonts/" + $name + ".woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+}
+
+// to use:
+//@include font(black, cytiapro-black-webfont)
+
+//@mixin DMSans {
+//  font-family: 'DMSans', sans-serif;
+//}
+
+//@mixin text($important: false) {
+//  @if ($important) {
+//    font-size: .9375rem !important;
+//    line-height: 1.302 !important;
+//  } @else {
+//    font-size: .9375rem;
+//    line-height: 1.302;
+//  }
+//}
+//
+//@mixin lead-text {
+//  font-size: 1rem;
+//  line-height: 1.301875;
+//}
+//
+//@mixin small-text {
+//  font-size: .8125rem;
+//  line-height: 1.3023076923;
+//}
+//
+//@mixin extra-small-text {
+//  font-size: .6875rem;
+//  line-height: 1.2727;
+//}
+//
+//@mixin h1 {
+//  font-size: 1.625rem;
+//  line-height: 1.3019230769;
+//  font-weight: 700;
+//}
+//
+//@mixin h2 {
+//  font-size: 1.25rem;
+//  line-height: 1.302;
+//  font-weight: 700;
+//}
+//
+//@mixin h3 {
+//  font-size: 1.0625rem;
+//  line-height: 1.3017647059;
+//  font-weight: 700;
+//}
+//
+//@mixin h4 {
+//  @include text;
+//  font-weight: 700;
+//}
+//
+//@mixin h5 {
+//  @include small-text;
+//  font-weight: 700;
+//}
+//
+//@mixin h6 {
+//  font-size: .625rem;
+//  line-height: 1.302;
+//  font-weight: 700;
+//}

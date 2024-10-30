@@ -1,0 +1,54 @@
+$white: #FFFFFF;
+$black: #000000;
+
+$colors: (
+        'white': $white,
+        'black': $black,
+);
+
+$spaces: (
+        0: 0,
+        1: 0.5rem,
+        2: 1rem,
+        3: 1.5rem,
+        4: 2rem,
+        5: 2.5rem,
+        6: 3rem,
+        'auto': auto,
+);
+
+$space-classes: (
+        'margin-top': 'mt',
+        'margin-right': 'mr',
+        'margin-bottom': 'mb',
+        'margin-left': 'ml',
+        'padding-top': 'pt',
+        'padding-right': 'pr',
+        'padding-bottom': 'pb',
+        'padding-left': 'pl',
+);
+
+$xs: 499;
+$sm: 568;
+$md: 768;
+$lg: 992;
+$xl: 1024;
+$xxl: 1260;
+
+$breakpoints: (
+        xs: $xs,
+        sm: $sm,
+        md: $md,
+        lg: $lg,
+        xl: $xl,
+        xxl: $xxl,
+);
+
+$breakpoints-reversed: (
+        xxl: $xxl,
+        xl: $xl,
+        lg: $lg,
+        md: $md,
+        sm: $sm,
+        xs: $xs,
+);
